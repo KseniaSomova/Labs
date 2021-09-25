@@ -1,0 +1,61 @@
+print('Задание к теме 4, номер задания - ')
+m=abs(int(input()))
+if m==1:
+    print('-№1 (S и Р прямоугольника)')
+    print('Сторона а - ')
+    a= int(input())
+    print('Сторона b - ')
+    b= int(input())
+    if a>0 and b>0:
+       S= a*b
+       P= 2*(a+b)
+    else:
+        print('Стороны <0')
+    print('S= ',S, 'P= ',P)
+if m==2:
+    print('-№2 (Длинна окружности)')
+    L=0
+    print('Диаметр - ')
+    d= int(input())
+    L=d*(3.14)
+    print('L= ',L)
+if m==3:
+    print('-№3 (Среднее арифмитическое)')
+    a = int(input())
+    b = int(input())
+    sr = ((a+b)/2)
+    print ('Ср. арифм. - ', sr)
+if m==4:
+    print('-№4 (+, -, *, : двух чисел)')
+    print('Число a -')
+    o= int(input())
+    print('Число b -')
+    u= int(input())
+    a=o*o
+    b=u*u
+    s= a+b
+    if a>b:
+        r=a-b
+        h=a/b 
+    else:
+        r=b-a
+        h=b/a
+    p=a*b
+    print('"+" = ',s,', "-" = ',r,', "*" = ',p,', ":" = ',h)
+if m==5:
+    print('-№5 (+, -, *, : модулей двух чисел)')
+    print('Число a -')
+    o= int(input())
+    print('Число b -')
+    u= int(input())
+    a=abs(o)
+    b=abs(u)
+    s= a+b
+    if a>b:
+       r=a-b
+       h=a/b 
+    else:
+        r=b-a
+        h=b/a
+    p=a*b
+    print('"+" = ',s,', "-" = ',r,', "*" = ',p,', ":" = ',h)
