@@ -1,98 +1,97 @@
-print('Задание к теме 5')
-print('Выбор задания - ', end=' ')
-m= int(input())
-if m==1:
-    print('Задание 1')
-    print('X1 = ', end=' ')
-    x1 = int(input())
-    print('Y1 = ', end=' ')
-    y1 = int(input())
-    print('X2 = ', end=' ')
-    x2 = int(input())
-    print('Y2 = ', end=' ')
-    y2 = int(input())
-    t= ((x2-x1)**2)-((y2-y1)**2)
-    p=pow(t,0.5)
-    print(p)
-if m==2:
-    print('Задание 2')
-    A=[0]*2
-    B=[0]*2
-    C=[0]*2
-    print('Введите координаты А - ',end=' ')
-    for i in range(len(A)):
-       A[i]= int(input())
-    print('Введите координаты В - ',end=' ')
-    for i in range(len(B)):
-        B[i]= int(input())
-    print('Введите координаты С - ',end=' ')
-    for i in range(len(C)):
-        C[i]= int(input())
-    ac=((C[0]-A[0])**2)+((C[1]-A[1])**2)**0.5
-    ab=((B[0]-A[0])**2)+((B[1]-A[1])**2)**0.5
-    sum=ac+ab
-    print('AC = ', ac,"AB = ", ab,'Sum = ',sum)
-if m==3:  
-    print('Задание 3')
-    A=[0]*2
-    B=[0]*2
-    C=[0]*2
-    print('Введите координаты А - ',end=' ')
-    for i in range(len(A)):
-       A[i]= int(input())
-    print('Введите координаты В - ',end=' ')
-    for i in range(len(B)):
-        B[i]= int(input())
-    print('Введите координаты С - ',end=' ')
-    for i in range(len(C)):
-        f=int(input())
-        if (f>B[i] and f<A[i]) or (f<B[i] and f>A[i]) or (f==B[i] and f==A[i]):
-            C[i]= f
-        else:
-           print('С не лежит между точками А и В')
-    ac=((C[0]-A[0])**2)+((C[1]-A[1])**2)**0.5
-    bc=((B[0]-C[0])**2)+((B[1]-C[1])**2)**0.5
-    pr=ac*bc
-    print('AC = ', ac, 'BC = ', bc,'Произведение АC и BC - ', pr)
-if m==4:    
-    print('Задание 4')
-    A=[0]*2
-    B=[0]*2
-    A1=[0]*2
-    B1=[0]*2
-    print('Введите координаты А - ',end=' ')
-    for i in range(len(A)):
-        A[i]= int(input())
-    print('Введите координаты В - ',end=' ')
-    for i in range(len(B)):
-        B[i]= int(input())
-    A1[0]=A[0]
-    A1[1]=B[1]
-    B1[0]=B[0]
-    B1[1]=A[1]
-    a=(((A1[0]-A[0])**2)+((A1[1]-A[1])**2)**0.5)
-    b=(((B1[0]-B[0])**2)+((B1[1]-B[1])**2)**0.5)
-    P= a*2+b*2
-    S=a*b
-    print('P прямоугольника = ',P,'S = ',S)
-if m==5:
-    print('Задание 5')
-    A=[0]*2
-    B=[0]*2
-    C=[0]*2
-    print('Введите координаты А - ',end=' ')
-    for i in range(len(A)):
-        A[i]= int(input())
-    print('Введите координаты В - ',end=' ')
-    for i in range(len(B)):
-        B[i]= int(input())
-    print('Введите координаты С - ',end=' ')
-    for i in range(len(C)):
-        C[i]= int(input())
-    AB=((B[0]-A[0])**2)+((B[1]-A[1])**2)**0.5
-    AC=((C[0]-A[0])**2)+((C[1]-A[1])**2)**0.5
-    BC=((C[0]-B[0])**2)+((C[1]-B[1])**2)**0.5
-    P=AB+AC+BC
-    p=(P/2)
-    S=(p*(p-AB)*(p-AC)*(p-BC))**0.5
-print('P треугольника = ',P,'S = ',S)
+n=int(input('Vibirite № zadania - '))
+if n==1:
+    print('Vvedite koordinati 1 tochki (x1,y1)')
+    x=[]
+    y=[]
+    t=0
+    for i in range(2):
+        p=int(input())
+        x.insert(i,p)
+    print(x)
+    print('Vvedite koordinati 2 tochki (x2,y2)')
+    for i in range(2):
+        p=int(input())
+        y.insert(i,p)
+    print(y)
+    t=((x[0]-y[0])**2+(x[1]-y[1])**2)**(1/2)
+    print('Rasstoianie mezdy tochkami = ', "%.4f" % t)
+if n==2:
+    print('Vvedite koordinati tochki A(x,y)')
+    a,b,c = ([],[],[])
+    for i in range(2):
+        x=int(input())
+        a.insert(i,x)
+    print('Vvedite koordinati tochki B(x,y)')
+    for i in range(2):
+        x=int(input())
+        b.insert(i,x)
+    print('Vvedite koordinati tochki C(x,y)')
+    for i in range(2):
+        x=int(input())
+        c.insert(i,x)
+    AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
+    BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
+    s=AC+BC
+    print('A(',a[0],',',a[1],')  ','B(',b[0],',',b[1],')  ','C(',c[0],',',c[1],')')
+    print('AC=', AC,', BC=', BC, ' ih summa =', s)
+if n==3:
+    print('Vvedite tochki A,B,C (A dolzna bit levee B, C mezdy nimi')
+    a, b, c=([],[],[])
+    print('A(x,y) ')
+    for i in range(2):
+        x=int(input())
+        a.insert(i,x)
+    print('B(x,y) ')
+    for i in range(2):
+        x=int(input())
+        b.insert(i,x)
+    if (a[0]<b[0]):
+        print('C(x,y) ')
+        for i in range(2):
+            x=int(input())
+            c.insert(i,x)
+        if ((c[0]>a[0]) and (c[0]<b[0])):
+            p=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2))
+            print('Proizvedenie AC na BC = ', "%.4f" % p)
+        else: print('C ne lezit mezdy A i B')
+    else: print('A ne levee B')
+if n==4:
+    print('Vvedite koordinati 1 tochki priamoygolnika(x,y)')
+    a,b,c,d = ([],[],[],[])
+    for i in range(2):
+        x=int(input())
+        a.insert(i,x)
+    print('Vvedite koordinati 2 tochki (x,y)')
+    for i in range(2):
+        x=int(input())
+        b.insert(i,x)
+    if ((a[0]<b[0]) and (a[1]!=b[1])) or ((a[0]>b[0]) and (a[1]!=b[1])):
+        c.insert(0,a[0])
+        c.insert(1,b[1])
+        d.insert(0,b[0])
+        d.insert(1,a[1])
+    P=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*2+(((d[0]-b[0])**2+(d[1]-b[1])**2)**(1/2))*2
+    S=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))
+    print('S= ',S,', P= ',P)
+if n==5:
+    print('Vvedite tochki A,B,C (treygolnik')
+    a, b, c=([],[],[])
+    print('A(x,y) ')
+    for i in range(2):
+        x=int(input())
+        a.insert(i,x)
+    print('B(x,y) ')
+    for i in range(2):
+        x=int(input())
+        b.insert(i,x)
+    print('C(x,y) ')
+    for i in range(2):
+        x=int(input())
+        c.insert(i,x)
+    AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
+    BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
+    AB=((b[0]-a[0])**2+(b[1]-a[1])**2)**(1/2)
+    P=AC+AB+BC
+    po=(AC+AB+BC)/2
+    S=(po*(po-AB)*(po-AC)*(po-BC))**(1/2)
+    print('P= ',"%.4f" % P,', S= ',"%.4f" % S)
