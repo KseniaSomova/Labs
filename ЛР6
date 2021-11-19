@@ -1,0 +1,52 @@
+n=int(input('- Vibirite № zadania - '))
+if n==1:
+    a=int(input('Vvedite A -'))
+    b=int(input('Vvedite B -'))
+    buff=a
+    a=b
+    b=buff
+    print('A - ',a,', B - ',b)
+if n==2:
+    a=int(input('Vvedite A -'))
+    b=int(input('Vvedite B -'))
+    c=int(input('Vvedite C -'))
+    buffa=a
+    buffb=b
+    buffc=c
+    b=buffa
+    c=buffb
+    a=buffc
+    print('A - ',a,', B - ',b,', C - ',c)
+if n==3:
+    a=int(input('Vvedite A - '))
+    b=int(input('Vvedite B - '))
+    c=int(input('Vvedite C - '))
+    buffa=a
+    buffb=b
+    buffc=c
+    c=buffa
+    b=buffc
+    a=buffb
+    print('A - ',a,', B - ',b,', C - ',c)
+if n==4:
+    x=int(input('Vvedite x - '))
+    y=3*(x**6)-6*(x**2)-7
+    print('y = 3x^6 − 6x^2 − 7; pri x=',x,' y=',y)
+if n==5:
+    x=int(input('Vvedite x - '))
+    y=4*((x-3)**6)-7*((x-3)**3) + 2
+    print('y = 4*(x−3)^6 − 7*(x−3)^3 + 2; pri x=',x,' y=',y)
+if n==6:
+    a=int(input('Naiti A^8. Vvedite A - '))
+    a2=a*a
+    a4=a2*a2
+    a8=a4*a4
+    print('A^2 =',a2,', A^4 =',a4,', A^8 =',a8)
+if n==7:
+    a=int(input('Naiti A^15. Vvedite A - '))
+    a2=a*a
+    a3=a2*a
+    a5=a2*a3
+    a10=a5*a5
+    a15=a5*a10
+    print('A^2 =',a2,', A^3 =',a3,', A^5 =',a5,'A^10 =',a10,', A^15 =',a15,)
