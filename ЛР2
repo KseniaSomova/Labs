@@ -17,45 +17,23 @@ while True:
         t=((x[0]-y[0])**2+(x[1]-y[1])**2)**(1/2)
         print('~ Rasstoianie mezdy tochkami = ', "%.4f" % t)
     if n==2:
-        print('-Vvedite koordinati tochki A(x,y)')
-        a,b,c = ([],[],[])
-        for i in range(2):
-            x=int(input())
-            a.insert(i,x)
-        print('-Vvedite koordinati tochki B(x,y)')
-        for i in range(2):
-            x=int(input())
-            b.insert(i,x)
-        print('-Vvedite koordinati tochki C(x,y)')
-        for i in range(2):
-            x=int(input())
-            c.insert(i,x)
-        AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
-        BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
+        a=int(input('-Vvedite koordinati tochki A - '))
+        b=int(input('tochki B - '))
+        c=int(input('tochki C - '))
+        AC=abs(c-a)
+        BC=abs(c-b)
         s=AC+BC
-        print('A(',a[0],',',a[1],')  ','B(',b[0],',',b[1],')  ','C(',c[0],',',c[1],')')
+        print('A (',a,'), B(',b,'), C(',c,')')
         print('AC=', AC,', BC=', BC, ' ih summa =', s)
     if n==3:
-        print('-Vvedite tochki A,B,C (A dolzna bit levee B, C mezdy nimi')
-        a, b, c=([],[],[])
-        print('A(x,y) ')
-        for i in range(2):
-            x=int(input())
-            a.insert(i,x)
-        print('B(x,y) ')
-        for i in range(2):
-            x=int(input())
-            b.insert(i,x)
-        if (a[0]<b[0]):
-            print('C(x,y) ')
-            for i in range(2):
-                x=int(input())
-                c.insert(i,x)
-            if ((c[0]>a[0]) and (c[0]<b[0])):
-                p=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2))
+        print('-Vvedite tochki A,B,C (C mezdy nimi')
+        a=int(input('A - ' ))
+        b=int(input('B - ' ))
+        c=int(input('C - ' ))
+        if ((c>a) and (c<b)) or ((c<a) and (c>b)):
+                p=(abs(c-a))*(abs(c-b))
                 print('~Proizvedenie AC na BC = ', "%.4f" % p)
-            else: print('C ne lezit mezdy A i B')
-        else: print('A ne levee B')
+        else: print('C ne lezit mezdy A i B')
     if n==4:
         print('-Vvedite koordinati 1 tochki priamoygolnika(x,y)')
         a,b,c,d = ([],[],[],[])
