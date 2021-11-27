@@ -39,14 +39,14 @@ if n==5:
 if n==6:
     a=int(input('Naiti A^8. Vvedite A - '))
     a2=a*a
-    a4=a2*a2
-    a8=a4*a4
-    print('A^2 =',a2,', A^4 =',a4,', A^8 =',a8)
+    a=a2*a2
+    a2=a*a
+    print('A^8 =',a2)
 if n==7:
     a=int(input('Naiti A^15. Vvedite A - '))
     a2=a*a
     a3=a2*a
-    a5=a2*a3
-    a10=a5*a5
-    a15=a5*a10
-    print('A^2 =',a2,', A^3 =',a3,', A^5 =',a5,'A^10 =',a10,', A^15 =',a15,)
+    a=a2*a3
+    a2=a*a
+    a3=a2*a
+    print('A^15 =',a3)
