@@ -1,97 +1,98 @@
-n=int(input('Vibirite № zadania - '))
-if n==1:
-    print('Vvedite koordinati 1 tochki (x1,y1)')
-    x=[]
-    y=[]
-    t=0
-    for i in range(2):
-        p=int(input())
-        x.insert(i,p)
-    print(x)
-    print('Vvedite koordinati 2 tochki (x2,y2)')
-    for i in range(2):
-        p=int(input())
-        y.insert(i,p)
-    print(y)
-    t=((x[0]-y[0])**2+(x[1]-y[1])**2)**(1/2)
-    print('Rasstoianie mezdy tochkami = ', "%.4f" % t)
-if n==2:
-    print('Vvedite koordinati tochki A(x,y)')
-    a,b,c = ([],[],[])
-    for i in range(2):
-        x=int(input())
-        a.insert(i,x)
-    print('Vvedite koordinati tochki B(x,y)')
-    for i in range(2):
-        x=int(input())
-        b.insert(i,x)
-    print('Vvedite koordinati tochki C(x,y)')
-    for i in range(2):
-        x=int(input())
-        c.insert(i,x)
-    AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
-    BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
-    s=AC+BC
-    print('A(',a[0],',',a[1],')  ','B(',b[0],',',b[1],')  ','C(',c[0],',',c[1],')')
-    print('AC=', AC,', BC=', BC, ' ih summa =', s)
-if n==3:
-    print('Vvedite tochki A,B,C (A dolzna bit levee B, C mezdy nimi')
-    a, b, c=([],[],[])
-    print('A(x,y) ')
-    for i in range(2):
-        x=int(input())
-        a.insert(i,x)
-    print('B(x,y) ')
-    for i in range(2):
-        x=int(input())
-        b.insert(i,x)
-    if (a[0]<b[0]):
+while True:
+    n=int(input('! Vibirite № zadania - '))
+    if n==1:
+        print('-Vvedite koordinati 1 tochki (x1,y1)')
+        x=[]
+        y=[]
+        t=0
+        for i in range(2):
+            p=int(input())
+            x.insert(i,p)
+        print(x)
+        print('-Vvedite koordinati 2 tochki (x2,y2)')
+        for i in range(2):
+            p=int(input())
+            y.insert(i,p)
+        print(y)
+        t=((x[0]-y[0])**2+(x[1]-y[1])**2)**(1/2)
+        print('~ Rasstoianie mezdy tochkami = ', "%.4f" % t)
+    if n==2:
+        print('-Vvedite koordinati tochki A(x,y)')
+        a,b,c = ([],[],[])
+        for i in range(2):
+            x=int(input())
+            a.insert(i,x)
+        print('-Vvedite koordinati tochki B(x,y)')
+        for i in range(2):
+            x=int(input())
+            b.insert(i,x)
+        print('-Vvedite koordinati tochki C(x,y)')
+        for i in range(2):
+            x=int(input())
+            c.insert(i,x)
+        AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
+        BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
+        s=AC+BC
+        print('A(',a[0],',',a[1],')  ','B(',b[0],',',b[1],')  ','C(',c[0],',',c[1],')')
+        print('AC=', AC,', BC=', BC, ' ih summa =', s)
+    if n==3:
+        print('-Vvedite tochki A,B,C (A dolzna bit levee B, C mezdy nimi')
+        a, b, c=([],[],[])
+        print('A(x,y) ')
+        for i in range(2):
+            x=int(input())
+            a.insert(i,x)
+        print('B(x,y) ')
+        for i in range(2):
+            x=int(input())
+            b.insert(i,x)
+        if (a[0]<b[0]):
+            print('C(x,y) ')
+            for i in range(2):
+                x=int(input())
+                c.insert(i,x)
+            if ((c[0]>a[0]) and (c[0]<b[0])):
+                p=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2))
+                print('~Proizvedenie AC na BC = ', "%.4f" % p)
+            else: print('C ne lezit mezdy A i B')
+        else: print('A ne levee B')
+    if n==4:
+        print('-Vvedite koordinati 1 tochki priamoygolnika(x,y)')
+        a,b,c,d = ([],[],[],[])
+        for i in range(2):
+            x=int(input())
+            a.insert(i,x)
+        print('-Vvedite koordinati 2 tochki (x,y)')
+        for i in range(2):
+            x=int(input())
+            b.insert(i,x)
+        if ((a[0]<b[0]) and (a[1]!=b[1])) or ((a[0]>b[0]) and (a[1]!=b[1])):
+            c.insert(0,a[0])
+            c.insert(1,b[1])
+            d.insert(0,b[0])
+            d.insert(1,a[1])
+        P=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*2+(((d[0]-b[0])**2+(d[1]-b[1])**2)**(1/2))*2
+        S=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))
+        print('~ S= ',S,', P= ',P)
+    if n==5:
+        print('- Vvedite tochki A,B,C (treygolnik')
+        a, b, c=([],[],[])
+        print('A(x,y) ')
+        for i in range(2):
+            x=int(input())
+            a.insert(i,x)
+        print('B(x,y) ')
+        for i in range(2):
+            x=int(input())
+            b.insert(i,x)
         print('C(x,y) ')
         for i in range(2):
             x=int(input())
             c.insert(i,x)
-        if ((c[0]>a[0]) and (c[0]<b[0])):
-            p=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2))
-            print('Proizvedenie AC na BC = ', "%.4f" % p)
-        else: print('C ne lezit mezdy A i B')
-    else: print('A ne levee B')
-if n==4:
-    print('Vvedite koordinati 1 tochki priamoygolnika(x,y)')
-    a,b,c,d = ([],[],[],[])
-    for i in range(2):
-        x=int(input())
-        a.insert(i,x)
-    print('Vvedite koordinati 2 tochki (x,y)')
-    for i in range(2):
-        x=int(input())
-        b.insert(i,x)
-    if ((a[0]<b[0]) and (a[1]!=b[1])) or ((a[0]>b[0]) and (a[1]!=b[1])):
-        c.insert(0,a[0])
-        c.insert(1,b[1])
-        d.insert(0,b[0])
-        d.insert(1,a[1])
-    P=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*2+(((d[0]-b[0])**2+(d[1]-b[1])**2)**(1/2))*2
-    S=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))
-    print('S= ',S,', P= ',P)
-if n==5:
-    print('Vvedite tochki A,B,C (treygolnik')
-    a, b, c=([],[],[])
-    print('A(x,y) ')
-    for i in range(2):
-        x=int(input())
-        a.insert(i,x)
-    print('B(x,y) ')
-    for i in range(2):
-        x=int(input())
-        b.insert(i,x)
-    print('C(x,y) ')
-    for i in range(2):
-        x=int(input())
-        c.insert(i,x)
-    AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
-    BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
-    AB=((b[0]-a[0])**2+(b[1]-a[1])**2)**(1/2)
-    P=AC+AB+BC
-    po=(AC+AB+BC)/2
-    S=(po*(po-AB)*(po-AC)*(po-BC))**(1/2)
-    print('P= ',"%.4f" % P,', S= ',"%.4f" % S)
+        AC=((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2)
+        BC=((c[0]-b[0])**2+(c[1]-b[1])**2)**(1/2)
+        AB=((b[0]-a[0])**2+(b[1]-a[1])**2)**(1/2)
+        P=AC+AB+BC
+        po=(AC+AB+BC)/2
+        S=(po*(po-AB)*(po-AC)*(po-BC))**(1/2)
+        print('~ P= ',"%.4f" % P,', S= ',"%.4f" % S)
