@@ -1,0 +1,61 @@
+import math
+while True:
+    n=int(input('! Vibirite № zadania - '))
+    if n==1:
+        n=int(input('Vvedite N - '))
+        t=n%60
+        print('~  S nachala poslednei minuti proshlo',t,'sekund(i)')
+    if n==2:
+        k=int(input('Vvedite K (1-365) - '))
+        n=k
+        while k>7:
+            k=k-7
+        if k==0:
+            print('  ~',n,'den` - voskresenie')
+        if k==1:
+            print('  ~',n,'den` - ponedelnik')
+        if k==2:
+            print('  ~',n,'den` - vtornik')
+        if k==3:
+            print('  ~',n,'den` - sreda')
+        if k==4:
+            print('  ~',n,'den` - chetverg')
+        if k==5:
+            print('  ~',n,'den` - piatniza')
+        if k==6:
+            print('  ~',n,'den` - subbote')
+    if n==3:
+        k=int(input('Vvedite K (1-365) - '))
+        n=int(input('Vvedite N (1-7) - '))
+        d=((k+n-2)%7)+1
+        if d==7:
+            print('  ~',k,'den` - voskresenie')
+        if d==1:
+            print('  ~',k,'den` - ponedelnik')
+        if d==2:
+            print('  ~',k,'den` - vtornik')
+        if d==3:
+            print('  ~',k,'den` - sreda')
+        if d==4:
+            print('  ~',k,'den` - chetverg')
+        if d==5:
+            print('  ~',k,'den` - piatniza')
+        if d==6:
+            print('  ~',k,'den` - subbota')
+    if n==4:
+        a=int(input('Vvedite A - '))
+        b=int(input('B - '))
+        c=int(input('C - '))
+        s1=a*b
+        s2=c*c
+        if s1>s2:
+            p=s1//s2
+            t=s1-(s2*p)
+            print('~  V priamoygolnik AxB (S=',s1,') pomestitsa kvadrat CxC (S=',s2,') -',p,'raz(a)')
+            print('Ploshad ne zaniatoi ter-rii -',t)
+        else: print('~  V pr.AxB ne pomestitsa kv.CxC')
+    if n==5:
+        g=int(input('Vvedite god - '))
+        f=(g//100)+1
+        if g%100>=1: print('~  ',g,'god -',f,'stoletie')
+        else: print('~  ',g,'god -',(f-1),'stoletie')
