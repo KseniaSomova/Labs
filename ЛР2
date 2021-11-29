@@ -26,7 +26,7 @@ while True:
         print('A (',a,'), B(',b,'), C(',c,')')
         print('AC=', AC,', BC=', BC, ' ih summa =', s)
     if n==3:
-        print('-Vvedite tochki A,B,C (C mezdy nimi')
+        print('-Vvedite tochki A,B,C (C mezdy nimi)')
         a=int(input('A - ' ))
         b=int(input('B - ' ))
         c=int(input('C - ' ))
@@ -53,7 +53,7 @@ while True:
         S=(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))*(((c[0]-a[0])**2+(c[1]-a[1])**2)**(1/2))
         print('~ S= ',S,', P= ',P)
     if n==5:
-        print('- Vvedite tochki A,B,C (treygolnik')
+        print('- Vvedite tochki A,B,C (treygolnik)')
         a, b, c=([],[],[])
         print('A(x,y) ')
         for i in range(2):
@@ -73,4 +73,5 @@ while True:
         P=AC+AB+BC
         po=(AC+AB+BC)/2
         S=(po*(po-AB)*(po-AC)*(po-BC))**(1/2)
-        print('~ P= ',"%.4f" % P,', S= ',"%.4f" % S)
+        if S==0 or P==0: print('~ treygolnika ne sushestvuet')
+        else: print('~ P= ',"%.4f" % P,', S= ',"%.4f" % S)
