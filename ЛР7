@@ -1,46 +1,50 @@
 import math
 p=math.pi
-n=int(input('- Vibirite № zadania - '))
-if n==1:
-    a=int(input('Vvedite ygol (v gradusah: 0<a<360) - '))
-    r=a*(p/180)
-    print('~ V radianah ygol a(',a,') raven ',"%.6f" % r,'')
-if n==2:
-    r=int(input('Vvedite ygol (v radianah: 0<a<2pi) - '))
-    a=r*(180/p)
-    print('~ V gradusah ygol a(',r,') raven ',"%.6f" % a,'')
-if n==3:
-    x=float(input('KG konfet (>1) - '))
-    A=int(input('Stoimost etih KG konfet - '))
-    A1=A/x
-    print('~ 1 KG konfet stoit -',"%.2f" % A1,'rublei')
-    y=float(input('Stoimost skolki KG nado yznat - '))
-    Ay=A1*y
-    print('~ Stoimost',y,'KG konfet rabna',"%.2f" % Ay,'rublei')
-if n==4:
-    V1=int(input('Vvedite skorost 1 avto (km/сhas) - '))
-    V2=int(input('Skorost 2 avto (km/сhas) - '))
-    S=int(input('Rasstoianie mezdy nimi (km) - '))
-    T=int(input('Chasi - '))
-    C=V1*T+V2*T+S
-    print('~ Cherez',T,'chasov avtomobili otdaliatsa na',C,'km')
-if n==5:
-    print('Lineinoi yravnenie A*x + B = 0 (A ne ravno 0)')
-    A=int(input('Vvedite A - '))
-    B=int(input('Vvedite B - '))
-    x= (-B)/A
-    print('~ Pri A =',A,', B =',B,'; x =',x)
-if n==6:
-    print('Sistema yravneniy A1·x + B1·y = C1, A2·x + B2·y = C2')
-    print('Vvedite cherez probel (A1 i A2)',end=' ')
-    a=list(map(int, input().split()))
-    print('Vvedite (B1 i B2)',end=' ')
-    b=list(map(int, input().split()))
-    print('Vvedite (C1 i C2)',end=' ')
-    c=list(map(int, input().split()))
-    y=(2*c[1]-c[0]*a[1])/(2*b[1]-b[0]*a[1])
-    x=(c[0]-b[1]*y)/a[0]
-    print('~ Polychaem yravnenia:')
-    print(a[0],'x +',b[0],'y =',c[0])
-    print(a[1],'x +',b[1],'y =',c[1])
-    print('~ Pri takih dannih: x =',"%.3f" % x,', y =',"%.3f" % y)
+while True:
+    n=int(input('- Vibirite № zadania - '))
+    if n==1:
+        a=int(input('Vvedite ygol (v gradusah: 0<a<360) - '))
+        r=a*(p/180)
+        print('~  V radianah ygol a(',a,') raven ',"%.6f" % r,'')
+    if n==2:
+        r=int(input('Vvedite ygol (v radianah: 0<a<2pi) - '))
+        a=r*(180/p)
+        print('~  V gradusah ygol a(',r,') raven ',"%.6f" % a,'')
+    if n==3:
+        print('X kg konfet stoit A rublei. Skolko stoit 1 kg i Y kg')
+        x=float(input('KG konfet (>1) - '))
+        A=int(input('Stoimost etih KG konfet - '))
+        A1=A/x
+        print('~  1 KG konfet stoit -',"%.2f" % A1,'rublei')
+        y=float(input('Stoimost skolki KG nado yznat - '))
+        Ay=A1*y
+        print('~  Stoimost',y,'KG konfet rabna',"%.2f" % Ay,'rublei')
+    if n==4:
+        V1=int(input('Vvedite skorost 1 avto (km/сhas) - '))
+        V2=int(input('Skorost 2 avto (km/сhas) - '))
+        S=int(input('Rasstoianie mezdy nimi (km) - '))
+        T=int(input('Chasi - '))
+        C=V1*T+V2*T+S
+        print('~  Cherez',T,'chasa(ov) avtomobili otdaliatsa na',C,'km')
+    if n==5:
+        print('Lineinoi yravnenie A*x + B = 0 (A ne ravno 0)')
+        A=int(input('Vvedite A - '))
+        B=int(input('Vvedite B - '))
+        x= (-B)/A
+        print('~  Pri A =',A,', B =',B,'; x =',x)
+    if n==6:
+        print('Sistema yravneniy A1·x + B1·y = C1, A2·x + B2·y = C2')
+        print('Vvedite cherez probel (A1 i A2)',end=' ')
+        a=list(map(int, input().split()))
+        print('Vvedite (B1 i B2)',end=' ')
+        b=list(map(int, input().split()))
+        print('Vvedite (C1 i C2)',end=' ')
+        c=list(map(int, input().split()))
+        y=(2*c[1]-c[0]*a[1])/(2*b[1]-b[0]*a[1])
+        x=(c[0]-b[1]*y)/a[0]
+        print('~  Polychaem yravnenia:')
+        print(a[0],'x +',b[0],'y =',c[0])
+        print(a[1],'x +',b[1],'y =',c[1])
+        if (a[0]*x+b[0]*y==c[0]) and (a[1]*x+b[1]*y==c[1]):
+            print('~  Pri takih dannih: x =',"%.3f" % x,', y =',"%.3f" % y)
+        else: print('~ net reshenii')
