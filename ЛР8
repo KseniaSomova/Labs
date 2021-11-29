@@ -1,0 +1,28 @@
+import math
+while True:
+    n=int(input('! Vibirite № zadania - '))
+    if n==1:
+        r=int(input('Vvedite razmer faila (v baitah) - '))
+        p=math.ceil(r/1024)
+        print(' ~',r,'bait =',p,'kilobait')
+    if n==2:
+        a=int(input('Vvedite A (zeloe polozitelnoe) - '))
+        b=int(input('Vvedite B (A>B) - '))
+        c=math.trunc(a/b)
+        print('  ~ Na otrezke A =',a,'pomeshaitsa',c,'otrezka(ov/ok) dlinnoi B =',b)
+    if n==3:
+        a=int(input('Vvedite A (zeloe polozitelnoe) - '))
+        b=int(input('Vvedite B (A>B) - '))
+        c=math.trunc(a/b)
+        d=a-(b*c)
+        print('  ~ Na otrezke A =',a,'pri razmeshenii otrezkov dlinnoi B =',b,'ostaetsa ne zaniato -',d)
+    if n==4:
+        w=int(input('Vvedite dvuznachnoe chislo - '))
+        b=w%10
+        a=b*10+(w//10)
+        print('~ ',a)
+    if n==5:
+        w=int(input('Vvedite trehznachnoe chislo - '))
+        b=w//100
+        a=(w%100)*10+b
+        print('~ ',a)
