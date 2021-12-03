@@ -1,0 +1,31 @@
+a = 2
+A = []
+A_T = []
+for i in range(a): 
+    A.append([0] * a)
+    A_T.append([0] * a)
+    
+print("|A1*x + B1*y = C1\n|A2*x + B2*y = C2\n")
+print("A1,A2,B1,B2 = ")
+for i in range (2):
+    for j in range(2):
+        A[i][j]=int(input())
+x=y=0
+B=[[x],[y]]
+X=[[1],[1]]
+print("C1,C2 = ")
+for i in range(a):
+    B[i]=int(input())
+    
+dA = A[0][0]*A[1][1] - A[0][1]*A[1][0]
+#A00=A11; A01=A10; A10=A01;A11=A00
+for i in range(2):
+    for j in range(2):
+        A_T[i][j]=(pow(-1,i+j)*A[not(i)][not(j)])/dA
+
+print("A_T ", A_T)
+#A^T
+for i in range(2):
+    for j in range(2):
+        X[i] = B[i]*A_T[j][i]
+print("A = ", A,"B = ",B,"dA = ",dA,"X = ", X)
