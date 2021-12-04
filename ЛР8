@@ -23,6 +23,10 @@ while True:
         print('~ ',a)
     if n==5:
         w=int(input('Vvedite trehznachnoe chislo - '))
-        b=w//100
-        a=(w%100)*10+b
-        print('~ ',a)
+        if w//1000>0 and w//100>8: print('~ Chislo ne trexznachnoe, vvedite eshe raz')
+        if w//100==0: 
+            print('~ Chislo ne trexznachnoe, vvedite eshe raz.')
+        if w//100<11 and w%100>=0 and w//100!=0:
+            b=w//100
+            a=(w%100)*10+b
+            print('~ ',a)
